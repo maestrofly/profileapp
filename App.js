@@ -1,9 +1,16 @@
 // import { StatusBar } from 'expo-status-bar';
 import React, {Component} from 'react';
-import { StyleSheet, Text, View, TextInput,} from 'react-native';
+import { StyleSheet, Text, View, TextInput, Button, TouchableOpacity } from 'react-native';
 
 
 class App extends Component{
+  constructor(props){
+    super(props)
+    this.state = {
+      email:"",
+      password:""
+    }
+  }
   render(){
     return (
       <View style={styles.container}>
@@ -12,20 +19,36 @@ class App extends Component{
            placeholder="email" 
            autoCapitalize="none"
            autoCorrect={false}
-          //  secureTextEntry={true}
-          value="good"
-          onChangeText={(text)=>{
-            console.log(text)
+          value={this.state.email}
+          onChangeText={(email)=>{
+            this.setState({email})
           }}
            />
+
+
+         <TextInput
+           style={styles.input} 
+           placeholder="password" 
+           autoCapitalize="none" 
+           autoCorrect={false}
+           secureTextEntry={true}
+          value={this.state.password}
+          onChangeText={(password)=>{
+            this.setState({password})
+          }} 
+          />
+
+         <TouchableOpacity style={styles.buttonContainer}>
+           <Text style={styles.button}>Login</Text>
+         </TouchableOpacity>
       </View>
     );
   }
 }
-
+ 
 
 const styles = StyleSheet.create({
-  container: {
+  container: {     
     flex:1,
    marginTop:100,
    backgroundColor:"green"
@@ -33,7 +56,21 @@ const styles = StyleSheet.create({
   input:{
     backgroundColor:"yellow",
     height: 60,
-    marginLeft:15
+    marginLeft:15,
+    marginBottom:5
+  },
+  button:{
+    color:"white",
+    fontSize:20
+   
+  },
+  buttonContainer:{
+    marginHorizontal:20,
+    backgroundColor:"blue",
+    height:35,
+    justifyContent:"center",
+    alignItems:"center",
+    borderRadius:6
   }
 
     
