@@ -1,20 +1,44 @@
 // import { StatusBar } from 'expo-status-bar';
 import React, {Component} from 'react';
-import { StyleSheet, Text, View, TextInput, Button, TouchableOpacity } from 'react-native';
-
+import { StyleSheet, Text, View, TextInput, Button, TouchableOpacity, FlatList } from 'react-native';
+import LoginScreen from './LoginScreen'
 
 class App extends Component{
   constructor(props){
     super(props)
     this.state = {
       email:"",
-      password:""
+      password:"",
+      names:["ama","kofi","sam","Alberto","ama","kofi","sam","Alberto","ama","kofi","sam","Alberto"]
     }
   }
   render(){
     return (
       <View style={styles.container}>
-          <TextInput
+        
+        
+        <LoginScreen/>
+
+        
+        
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          {/* <TextInput
            style={styles.input} 
            placeholder="email" 
            autoCapitalize="none"
@@ -40,7 +64,7 @@ class App extends Component{
 
          <TouchableOpacity style={styles.buttonContainer}>
            <Text style={styles.button}>Login</Text>
-         </TouchableOpacity>
+         </TouchableOpacity> */}
       </View>
     );
   }
@@ -51,7 +75,7 @@ const styles = StyleSheet.create({
   container: {     
     flex:1,
    marginTop:100,
-   backgroundColor:"green"
+  //  backgroundColor:"green"
   },
   input:{
     backgroundColor:"yellow",
