@@ -2,7 +2,8 @@
 import React, {Component} from 'react';
 import { StyleSheet, Text, View, TextInput, Button, TouchableOpacity, FlatList } from 'react-native';
 import LoginScreen from './LoginScreen'
-
+import ContactsScreen from './ContactsScreen'
+import Contact from './components/Contact'
 class App extends Component{
   constructor(props){
     super(props)
@@ -17,7 +18,8 @@ class App extends Component{
       <View style={styles.container}>
         
         
-        <LoginScreen/>
+        <ContactsScreen/>
+        
 
         
         
